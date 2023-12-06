@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Catering Menu</title>
+</head>
+<body>
+
+<header>
+  <h1>Catering Menu</h1>
+</header>
+
+<main>
+  <div class="filter">
+    <label for="category">Filter by Category:</label>
+    <select id="category">
+      <option value="all">All</option>
+      <option value="appetizers">Appetizers</option>
+      <option value="hot-entrees">Hot Entrees</option>
+      <option value="sides">Sides</option>
+      <option value="miscellaneous">Miscellaneous</option>
+    </select>
+  </div>
+
+  <form action="cart.php" method="post">
+<!-- Appetizers -->
+    <div class="menu-item" data-category="appetizers">
+      <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
+      <h2>Appetizer</h2>
+      <p>Description of the appetizer.</p>
+      <p>Price: $40.00</p>
+      <button type="submit" name="add-to-cart" value="cater_spag">Add to Cart</button>
+    </div>
+    <div class="menu-item" data-category="appetizers">
+        <img src="appetizer_image.jpg" alt="Appetizer Image">
+        <h2>Edamame Dumplings</h2>
+        <p>Pan-fried dumplings served with soy sauce.</p><p class="serve_count">Serves 12</p>
+        <p>Price: $40.00</p>
+        <button type="submit" name="add-to-cart" value="cater_eda">Add to Cart</button>
+      </div>
+<!-- Hot entrees -->
+      <div class="menu-item" data-category="hot-entrees">
+        <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
+        <h2>Spaghetti Bolognese</h2>
+        <p>Delicious spaghetti with meat sauce.</p><p class="serve_count">Serves 12</p>
+        <p><strong>$50.00</strong></p>
+        <button type="submit" name="add-to-cart" value="entree1">Add to Cart</button>
+      </div>
+<!-- Sides -->
+
+<!-- Beverages -->
+
+<!-- Miscellaneous items -->
+    <!-- Add more menu items with different categories as needed -->
+
+  </form>
+</main>
+
+</body>
+</html>
