@@ -20,12 +20,14 @@
       <option value="appetizers">Appetizers</option>
       <option value="hot-entrees">Hot Entrees</option>
       <option value="sides">Sides</option>
+      <option value="beverages">Beverages</option>
       <option value="miscellaneous">Miscellaneous</option>
     </select>
   </div>
 
   <form action="cart.php" method="post">
 <!-- Appetizers -->
+<div><h2>Appetizers</h2>
     <div class="menu-item" data-category="appetizers">
       <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
       <h2>Appetizer</h2>
@@ -34,13 +36,15 @@
       <button type="submit" name="add-to-cart" value="cater_spag">Add to Cart</button>
     </div>
     <div class="menu-item" data-category="appetizers">
-        <img src="appetizer_image.jpg" alt="Appetizer Image">
+        <img src="img/Edamame dumplings.jpg" alt="Edamame Dumplings">
         <h2>Edamame Dumplings</h2>
         <p>Pan-fried dumplings served with soy sauce.</p><p class="serve_count">Serves 12</p>
         <p>Price: $40.00</p>
         <button type="submit" name="add-to-cart" value="cater_eda">Add to Cart</button>
       </div>
+  </div>
 <!-- Hot entrees -->
+<div><h2>Hot Entrees</h2>
       <div class="menu-item" data-category="hot-entrees">
         <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
         <h2>Spaghetti Bolognese</h2>
@@ -48,11 +52,30 @@
         <p><strong>$50.00</strong></p>
         <button type="submit" name="add-to-cart" value="entree1">Add to Cart</button>
       </div>
+</div>
 <!-- Sides -->
-
+<div><h2>Sides</h2>
+</div>
 <!-- Beverages -->
-
+<div><h2>Beverages</h2>
+  <div class="menu-item" data-category="beverages">
+    <img src="img/Lemonade.jpg" alt="Fresh Lemonade">
+    <h2>Fresh Lemonade</h2>
+    <p>Freshly squeezed lemonade.</p><p class="serve_count">Serves 6</p>
+    <p><strong>$18.00</strong></p>
+    <button type="submit" name="add-to-cart" value="bev1">Add to Cart</button>
+  </div>
+</div>
 <!-- Miscellaneous items -->
+<div><h2>Miscellaneous</h2>
+      <div class="menu-item" data-category="miscellaneous">
+        <!-- <img src="./img/Spaghetti Bolognese.jpeg" alt="Set of Catering Utensils"> -->
+        <h2>Set of Catering Utensils</h2>
+        <p>Set of 12 cutlery kits and chopsticks.</p>
+        <p><strong>$8.00</strong></p>
+        <button type="submit" name="add-to-cart" value="misc1">Add to Cart</button>
+      </div>
+</div>
     <!-- Add more menu items with different categories as needed -->
 
   </form>
