@@ -5,14 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
   <title>Catering Menu</title>
+  <script>
+    function searchMenu() {
+        // Get input value
+        var input, filter, menu, menuItem, i, txtValue;
+        input = document.getElementById("searchInput");
+        filter = input.value.toUpperCase();
+        menu = document.getElementById("menu");
+        menuItem = menu.getElementsByClassName("menu-item");
+
+        // Loop through all menu items, and hide those that don't match the search query
+        for (i = 0; i < menuItem.length; i++) {
+            txtValue = menuItem[i].innerText || menuItem[i].textContent;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                menuItem[i].style.display = "";
+            } else {
+                menuItem[i].style.display = "none";
+            }
+        }
+    }
+</script>
 </head>
 <body>
 
 <header>
   <h1>Catering Menu</h1>
+  <!-- Add search input field and button -->
+  <input type="text" id="searchInput" oninput="searchMenu()" placeholder="Search menu...">
 </header>
 
 <main>
+  <section id="menu">
   <div class="filter">
     <label for="category">Filter by Category:</label>
     <select id="category">
@@ -23,7 +46,7 @@
       <option value="beverages">Beverages</option>
       <option value="miscellaneous">Miscellaneous</option>
     </select>
-  </div>
+  </div><br>
 
   <form action="cart.php" method="post">
 <!-- Appetizers -->
@@ -38,9 +61,16 @@
     <div class="menu-item" data-category="appetizers">
         <img src="img/Edamame dumplings.jpg" alt="Edamame Dumplings">
         <h2>Edamame Dumplings</h2>
-        <p>Pan-fried dumplings served with soy sauce.</p><p class="serve_count">Serves 12</p>
+        <p>Pan-fried dumplings served with soy sauce.</p>
+        <p class="vegan">Vegan</p> <p class="serve_count">Serves 12</p>
         <p>Price: $40.00</p>
-        <button type="submit" name="add-to-cart" value="cater_eda">Add to Cart</button>
+        <form action="cart.php" method="post">
+          <input type="hidden" name="item_id" value="cater_eda">
+          <label for="quantity">Quantity:</label>
+          <input type="number" id="quantity" name="quantity" value="1" min="1">
+          <input type="submit" value="Add to Cart">
+        </form>
+        <!-- <button type="submit" name="add-to-cart" value="cater_eda">Add to Cart</button> -->
       </div>
   </div>
 <!-- Hot entrees -->
@@ -79,6 +109,7 @@
     <!-- Add more menu items with different categories as needed -->
 
   </form>
+</section>
 </main>
 
 </body>

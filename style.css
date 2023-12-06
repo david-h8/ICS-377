@@ -30,3 +30,10 @@ form {
     height: 150px;
 }
 /* Add more styles as needed */
+/* #searchInput{ //Keeps the search bar in place
+    position: fixed;
+} */
+.menu-item:hover {
+    outline-style: solid;
+    outline-color: gold;
+}
