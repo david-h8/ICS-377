@@ -53,6 +53,10 @@ unset($_SESSION['cart']);
     <header>
         <h1>Order Confirmation</h1>
     </header>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="catering.html">Catering Menu</a>
+    </nav>
     
     <h2>Checkout Information:</h2>
     <p><strong>Delivery Option:</strong> <?php echo $checkoutInfo['delivery_option']; ?></p>
