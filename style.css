@@ -71,6 +71,6 @@ button{
     width:max-content;
     height: max-content;
     /* display: flex; */
-    /* position: relative; */
+    position: relative;
     left: 1250px;
 }
