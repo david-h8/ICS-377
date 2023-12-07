@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Dummy catering menu items
+//Catering menu items, contain ID's starting from 100 and upwards
 $cateringMenuItems = [
     ['id' => 101, 'name' => 'Spaghetti Bolognese', 'count' => '12', 'price' => 50.00, 
         'image'=>'./img/Spaghetti Bolognese.jpeg', 'description' => 'Delicious spaghetti with meat sauce.'],
