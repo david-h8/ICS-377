@@ -62,7 +62,22 @@ p.price { font-size: 1.5rem; /* Increase size of price displayed */}
 #cart-icon {
     margin-right: 8px;
 }
-#cart-button, cart-icon{position: fixed;bottom: 0;right: 0;}
+#cart-button, cart-icon{position: fixed;right: 0;} */
+.add-to-cart {
+    background-color: #4caf50;
+    color: white;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+    padding: .75rem;
+}
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 1rem;
+}
 footer{
     text-align: center;
 }

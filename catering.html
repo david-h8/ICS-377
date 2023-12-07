@@ -1,116 +1,279 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <title>Catering Menu</title>
-  <script>
-    function searchMenu() {
-        // Get input value
-        var input, filter, menu, menuItem, i, txtValue;
-        input = document.getElementById("searchInput");
-        filter = input.value.toUpperCase();
-        menu = document.getElementById("menu");
-        menuItem = menu.getElementsByClassName("menu-item");
-
-        // Loop through all menu items, and hide those that don't match the search query
-        for (i = 0; i < menuItem.length; i++) {
-            txtValue = menuItem[i].innerText || menuItem[i].textContent;
-            if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                menuItem[i].style.display = "";
-            } else {
-                menuItem[i].style.display = "none";
-            }
-        }
-    }
-</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Exquisite Eateries</title>
+    <script src="script.js"></script>
 </head>
 <body>
+    <header>
+        <h1>Catering Menu</h1>
+        <a class="log" href="login.php">Login</a>
+        <!-- Add search input field and button -->
+        <input type="text" id="searchInput" oninput="searchMenu()" placeholder="🔍 Search menu...">
+    </header>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="catering.html">Catering Menu</a>
+    </nav>
+    <a id="cart-button" href="cart.php"><span id="cart-icon">🛒</span>View Cart</a>
+    <p>Our catering items are sold in trays.</p>
+    <section id="menu">
+        <!-- Sample Menu Items -->
+        <div class="menu-item">
+            <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
+            <h2>Spaghetti Bolognese</h2>
+            <p>Delicious spaghetti with meat sauce.</p>
+            <p>serves 12</p>
+            <p>$12.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Spaghetti Bolognese Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
 
-<header>
-  <h1>Catering Menu</h1>
-  <!-- Add search input field and button -->
-  <input type="text" id="searchInput" oninput="searchMenu()" placeholder="Search menu...">
-</header>
+        <div class="menu-item">
+            <img src="./img/Chicken Caesar.jpeg" alt="Chicken Caesar Salad">
+            <h2>Chicken Caesar Salad</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$9.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Chicken Caesar Salad Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Shrimp dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Shrimp dumplings</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$10.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Shrimp Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Soup dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Soup dumplings </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$11.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Soup Dumplings Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Egg tart.jpeg" alt="Chicken Caesar Salad">
+            <h2>Egg tart            </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$8.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Egg tart Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <!-- <div class="menu-item">
+            <img src="./img/Rice noodle rolls.jpeg" alt="Chicken Caesar Salad">
+            <h2>Rice noodle rolls </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$15.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Rice noodle rolls">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div> -->
+        <!-- <div class="menu-item">
+            <img src="./img/Chicken feet  .webp" alt="Chicken Caesar Salad">
+            <h2>Chicken feet </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$13.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Chicken feet">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div> -->
+        <div class="menu-item">
+            <img src="./img/Barbecue pork buns.jpg" alt="Chicken Caesar Salad">
+            <h2>Barbecue pork buns </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$12.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="BBQ pork buns Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Shumai — a meat and vegetable dumpling.jpeg" alt="Chicken Caesar Salad">
+            <h2>Shumai — a meat and vegetable dumpling</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$16.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Shumai Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <!-- <div class="menu-item">
+            <img src="./img/Shuijiao — boiled dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Shuijiao — boiled dumplings</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$11.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Shuijiao">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div> -->
+        <!-- <div class="menu-item">
+            <img src="./img/Tangjiao — soup dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Tangjiao — soup dumplings </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$10.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Tangjiao">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Zhenjiao — steamed dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Zhenjiao — steamed dumplings            </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$9.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Zhenjiao">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div> -->
+        <div class="menu-item">
+            <img src="./img/Jianjiao — deep-fried dumplings.jpeg" alt="Chicken Caesar Salad">
+            <h2>Jianjiao — deep-fried dumplings            </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$7.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Jianjiao Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Shrimp.jpeg" alt="Chicken Caesar Salad">
+            <h2>Shrimp</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$13.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Shrimp Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Fish  .jpeg" alt="Chicken Caesar Salad">
+            <h2>Fish</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>serves 12</p>
+            <p>$12.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Fish Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <div class="menu-item">
+            <img src="./img/Eggplant  .jpeg" alt="Chicken Caesar Salad">
+            <h2>Eggplant</h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p class="vegan">Vegan</p>
+            <p>serves 12</p>
+            <p>$19.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Eggplant Tray">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div>
+        <!-- <div class="menu-item">
+            <img src="./img/Pickled vegetables.jpeg" alt="Chicken Caesar Salad">
+            <h2>Pickled vegetables </h2>
+            <p>Fresh salad with grilled chicken.</p>
+            <p>$10.99</p>
+            <form action="cart.php" method="post">
+                <input type="hidden" name="item_id" value="Pickled vegetables">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                <input type="submit" value="Add to Cart">
+            </form>
+        </div> -->
+        <div class="menu-item">
+          <img src="./img/Edamame dumplings.jpg" alt="Chicken Caesar Salad">
+          <h2>Edamame dumplings</h2>
+          <p>Savory edamame-filled dumplings, expertly crafted to satisfy your taste buds.</p>
+          <p class="vegan">Vegan</p>
+          <p>serves 12</p>
+          <p>$10.99</p>
+          <form action="cart.php" method="post">
+              <input type="hidden" name="item_id" value="Edamame dumplings Tray">
+              <label for="quantity">Quantity:</label>
+              <input type="number" id="quantity" name="quantity" value="1" min="1">
+              <input type="submit" value="Add to Cart">
+          </form>
 
-<main>
-  <section id="menu">
-  <div class="filter">
-    <label for="category">Filter by Category:</label>
-    <select id="category">
-      <option value="all">All</option>
-      <option value="appetizers">Appetizers</option>
-      <option value="hot-entrees">Hot Entrees</option>
-      <option value="sides">Sides</option>
-      <option value="beverages">Beverages</option>
-      <option value="miscellaneous">Miscellaneous</option>
-    </select>
-  </div><br>
-
-  <form action="cart.php" method="post">
-<!-- Appetizers -->
-<div><h2>Appetizers</h2>
-    <div class="menu-item" data-category="appetizers">
-      <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
-      <h2>Appetizer</h2>
-      <p>Description of the appetizer.</p>
-      <p>Price: $40.00</p>
-      <button type="submit" name="add-to-cart" value="cater_spag">Add to Cart</button>
+        <!-- Add more menu items as needed -->
+        
+    </section>
+    <button onclick="window.location.href= 'cart.php';">View Cart</button>
+</body><hr>
+<footer>
+    <div>
+        <p><a href="#" style="text-decoration: none; color: black;">Terms</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;">Privacy</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;"> Security</a></p>
+        <p><a href="faqs.html" style="text-decoration: none; color: black;"> FAQs</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;"> About Us</a></p>
+        <p>&#169;
+            <script>document.write(new Date().getFullYear());</script>, Exquisite Eateries, inc.
+        </p>
     </div>
-    <div class="menu-item" data-category="appetizers">
-        <img src="img/Edamame dumplings.jpg" alt="Edamame Dumplings">
-        <h2>Edamame Dumplings</h2>
-        <p>Pan-fried dumplings served with soy sauce.</p>
-        <p class="vegan">Vegan</p> <p class="serve_count">Serves 12</p>
-        <p>Price: $40.00</p>
-        <form action="cart.php" method="post">
-          <input type="hidden" name="item_id" value="cater_eda">
-          <label for="quantity">Quantity:</label>
-          <input type="number" id="quantity" name="quantity" value="1" min="1">
-          <input type="submit" value="Add to Cart">
-        </form>
-        <!-- <button type="submit" name="add-to-cart" value="cater_eda">Add to Cart</button> -->
-      </div>
-  </div>
-<!-- Hot entrees -->
-<div><h2>Hot Entrees</h2>
-      <div class="menu-item" data-category="hot-entrees">
-        <img src="./img/Spaghetti Bolognese.jpeg" alt="Spaghetti Bolognese">
-        <h2>Spaghetti Bolognese</h2>
-        <p>Delicious spaghetti with meat sauce.</p><p class="serve_count">Serves 12</p>
-        <p><strong>$50.00</strong></p>
-        <button type="submit" name="add-to-cart" value="entree1">Add to Cart</button>
-      </div>
-</div>
-<!-- Sides -->
-<div><h2>Sides</h2>
-</div>
-<!-- Beverages -->
-<div><h2>Beverages</h2>
-  <div class="menu-item" data-category="beverages">
-    <img src="img/Lemonade.jpg" alt="Fresh Lemonade">
-    <h2>Fresh Lemonade</h2>
-    <p>Freshly squeezed lemonade.</p><p class="serve_count">Serves 6</p>
-    <p><strong>$18.00</strong></p>
-    <button type="submit" name="add-to-cart" value="bev1">Add to Cart</button>
-  </div>
-</div>
-<!-- Miscellaneous items -->
-<div><h2>Miscellaneous</h2>
-      <div class="menu-item" data-category="miscellaneous">
-        <!-- <img src="./img/Spaghetti Bolognese.jpeg" alt="Set of Catering Utensils"> -->
-        <h2>Set of Catering Utensils</h2>
-        <p>Set of 12 cutlery kits and chopsticks.</p>
-        <p><strong>$8.00</strong></p>
-        <button type="submit" name="add-to-cart" value="misc1">Add to Cart</button>
-      </div>
-</div>
-    <!-- Add more menu items with different categories as needed -->
+</footer>
 
-  </form>
-</section>
-</main>
-
-</body>
 </html>

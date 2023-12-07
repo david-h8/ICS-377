@@ -8,6 +8,10 @@
 </head>
 <body>
     <header><h1>Restaurant Name</h1></header>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="catering.html">Catering Menu</a>
+    </nav>
 <?php
 session_start();
 
@@ -55,7 +59,7 @@ function displayCart() {
     if (empty($_SESSION['cart'])) {
         echo '<p>Your cart is empty.</p>';
         echo '<a href="index.html">View our regular menu</a><br>';
-        echo '<a href="e.php">View our catering menu</a>';
+        echo '<a href="catering.html">View our catering menu</a>';
         return;
     }
 

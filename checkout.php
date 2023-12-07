@@ -58,6 +58,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <header>
         <h1>Checkout</h1>
     </header>
+    <nav>
+      <a href="index.html">Menu</a>
+      <a href="catering.html">Catering Menu</a>
+    </nav>
     <form action="checkout.php" method="post">
         <label for="customerName">Customer Name:</label>
         <input type="text" id="customerName" name="customer_name" required>
