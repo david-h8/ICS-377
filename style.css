@@ -66,3 +66,11 @@ p.price { font-size: 1.5rem; /* Increase size of price displayed */}
 footer{
     text-align: center;
 }
+button{
+    font-size: large;
+    width:max-content;
+    height: max-content;
+    display: flex;
+    position: relative;
+    left: 1250px;
+}
