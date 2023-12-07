@@ -63,3 +63,6 @@ p.price { font-size: 1.5rem; /* Increase size of price displayed */}
     margin-right: 8px;
 }
 #cart-button, cart-icon{position: fixed;bottom: 0;right: 0;}
+footer{
+    text-align: center;
+}
