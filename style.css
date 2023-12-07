@@ -70,7 +70,13 @@ button{
     font-size: large;
     width:max-content;
     height: max-content;
-    /* display: flex; */
     position: relative;
     left: 1250px;
+}
+.log{
+    width: 100px;
+    position: relative;
+    left: 1250px;
+    bottom: 20px;
+    text-decoration: none;
 }
