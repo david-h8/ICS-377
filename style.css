@@ -17,6 +17,7 @@ header {
 }
 .menu-item {
     border: 1px solid #ccc;
+    border-radius: 0.5rem;
     padding: 10px;
     margin: 10px;
     width: 300px;
@@ -30,10 +31,35 @@ form {
     height: 150px;
 }
 /* Add more styles as needed */
-/* #searchInput{ //Keeps the search bar in place
-    position: fixed;
-} */
+
+/* Keeps the search bar in upper left of screen */
+#searchInput{ 
+    position: sticky;
+    top: 0;right: 0;
+    outline-style: double;
+    outline-color: goldenrod;
+    padding: 0.25em 2em;
+    border-radius: 0.75rem;
+} 
 .menu-item:hover {
-    outline-style: solid;
-    outline-color: gold;
+    box-shadow: 0px 0px 2px 2px black;
+    /* Visible in Windows high-contrast themes */
+    outline-color: transparent;
+    outline-width: 2px;
+    outline-style: dotted;
 }
+p.price { font-size: 1.5rem; /* Increase size of price displayed */} 
+/* Keep the cart button on bottom right of screen */
+#cart-button {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 1rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#cart-icon {
+    margin-right: 8px;
+}
+#cart-button, cart-icon{position: fixed;bottom: 0;right: 0;}

@@ -10,9 +10,9 @@
 <body>
     <header>
         <h1>Exquisite Eats</h1>
-        <!-- Add search input field and button -->
-        <input type="text" id="searchInput" oninput="searchMenu()" placeholder="🔍 Search menu...">
     </header>
+    <!-- Add search input field and button -->
+    <input type="text" id="searchInput" oninput="searchMenu()" placeholder="🔍 Search menu...">
     <section id="menu">
         <!-- Sample Menu Items -->
         <div class="menu-item">
@@ -22,7 +22,7 @@
             <p>$12.99</p>
             <form action="menu.php" method="post">
     <!-- Display "Remove from Cart" button if the item is already in the cart -->
-            <?php if (isset($_SESSION['cart']) && in_array($item['1'], $_SESSION['cart'])): ?>
+            <?php if (isset($_SESSION['cart']) && in_array($item['Spaghetti Bolognese'], $_SESSION['cart'])): ?>
                     <button type="submit" name="remove-from-cart" value="<?php echo $item['id']; ?>" class="remove-from-cart">Remove from Cart</button>
     <!-- Display "Add to Cart" button if the item is not in the cart -->
                     <?php else: ?>

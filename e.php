@@ -8,9 +8,13 @@ $cateringMenuItems = [
     ['id' => 102, 'name' => 'Chicken Caesar Salad', 'count' => '12', 'price' => 45.00, 
         'image'=>'./img/Chicken Caesar.jpeg', 'description' => 'Fresh salad with grilled chicken.'],
     ['id' => 103, 'name' => 'Soup Dumplings', 'count' => '12', 'price' => 40.00, 
-        'image'=>'./img/Soup dumplings.jpeg', 'description' => 'Dumplings filled with seasoned pork and soup.'],
+        'image'=>'./img/Soup dumplings.jpeg', 'description' => 'Dumplings filled with perfectly seasoned pork and soup.'],
     ['id' => 104, 'name' => 'Shrimp', 'count' => '12', 'price' => 50.00, 
-        'image'=>'./img/Shrimp.jpeg', 'description' => 'Wok-tossed shrimp cooked to perfection with a symphony of vibrant vegetables.'],
+        'image'=>'./img/Shrimp.jpeg', 'description' => 'Wok-tossed shrimp cooked with vegetables.'],
+    ['id' => 105, 'name' => 'Shumai', 'count' => '12', 'price' => 45.00, 
+        'image'=>'./img/Shumai — a meat and vegetable dumpling.jpeg', 'description' => 'Meat and vegetable dumpling.'],
+    ['id' => 106, 'name' => 'Egg tart', 'count' => '12', 'price' => 35.00, 
+        'image'=>'./img/Egg tart.jpeg', 'description' => 'Pastry crust with vanilla-infused custard.'],
 ];
 
 // Function to add items to the cart
@@ -53,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catering Menu</title>
     <link rel="stylesheet" href="style.css">
-    <style>
+    <!-- <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -112,26 +116,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             margin-right: 8px;
         }
         #cart-button, cart-icon{position: fixed;bottom: 0;right: 0;}
-    </style>
+    </style> -->
     <script src="script.js"></script>
 </head>
 <body>
 
 <header>
     <h1>Catering Menu</h1>
-    <!-- Add search input field and button -->
-    <input type="text" id="searchInput" oninput="searchMenu()" placeholder="🔍 Search menu...">
 </header>
+<!-- Add search input field and button -->
+<input type="text" id="searchInput" oninput="searchMenu()" placeholder="🔍 Search menu...">
 <section id="menu">
 <div id="catering-menu">
     <?php foreach ($cateringMenuItems as $item): ?>
         <div class="menu-item">
             <img src="<?php echo $item['image'];?>" alt="<?php echo $item['name'];?>">
-            <h2><?php echo $item['name']; ?></h2>
+            <h2 id="<?php echo $item['name']; ?>"><?php echo $item['name']; ?></h2>
             <p class='description'><?php echo$item['description']; ?></p>
             <p>serves <?php echo$item['count']; ?> </p>
-            <p><strong>$<?php echo $item['price']; ?></strong></p>
-            <form method="post" action="e.php">
+            <p class="price"><strong>$<?php echo $item['price']; ?></strong></p>
+<!-- The action statement below tries to keep to return user to same spot of item they add to cart when form posts -->
+            <form method="post" action="#<?php echo $item['name']; ?>"> 
                 <?php if (isset($_SESSION['cart']) && in_array($item['id'], $_SESSION['cart'])): ?>
                     <button type="submit" name="remove-from-cart" value="<?php echo $item['id']; ?>" class="remove-from-cart">Remove from Cart</button>
                 <?php else: ?>

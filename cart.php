@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Restaurant</title>
+</head>
+<body>
+    <header><h1>Restaurant Name</h1></header>
 <?php
 session_start();
 
@@ -40,10 +50,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 // Function to display the cart
 function displayCart() {
-    echo '<h2>Shopping Cart</h2>';
+    echo '<h2>🛒Shopping Cart</h2>';
 
     if (empty($_SESSION['cart'])) {
         echo '<p>Your cart is empty.</p>';
+        echo '<a href="index.html">View our regular menu</a><br>';
+        echo '<a href="e.php">View our catering menu</a>';
         return;
     }
 
@@ -80,3 +92,5 @@ if (!empty($_SESSION['cart'])) {
     echo '<a href="checkout.php">Proceed to Checkout</a>';
 }
 ?>
+</body>
+</html>
