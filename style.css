@@ -70,7 +70,7 @@ button{
     font-size: large;
     width:max-content;
     height: max-content;
-    display: flex;
-    position: relative;
+    /* display: flex; */
+    /* position: relative; */
     left: 1250px;
 }
