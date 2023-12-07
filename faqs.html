@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQs - Exquisite Eats</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -39,22 +40,26 @@
     .answer {
       margin-top: 10px;
     }
-  </style>
+  </style> 
+  <script src="script.js"></script>
 </head>
 <body>
 
 <header>
-  <h1>Your Restaurant Name FAQs</h1>
+  <h1>Frequently Asked Questions - Exquisite Eats</h1>
 </header>
 
 <main>
   <div class="faq-item" id="q_general">
     <h2>General Questions</h2>
     <div class="question">Q: What are your opening hours?</div>
-    <div class="answer">A: We are open from 11:00 AM to 10:00 PM, Monday to Sunday.</div>
+    <div class="answer" id="general_answer1">A: We are open from 11:00 AM to 10:00 PM, Monday to Sunday.</div>
 
     <div class="question">Q: Do you take reservations?</div>
-    <div class="answer">A: Yes, we accept reservations. You can make a reservation online or by calling us.</div>
+    <div class="answer">A: No we do not offer dining services, but you can order takeout or delivery online.</div>
+  
+    <div class="question">Q: Are there any promotions or loyalty programs for regular customers?</div>
+    <div class="answer">A: Yes, we often have special promotions and loyalty programs for our regular customers. Check our website or inquire with our staff for the latest offerings.</div>
   </div>
 
   <div class="faq-item" id="q_menu">
@@ -64,11 +69,34 @@
 
     <div class="question">Q: Do you offer vegetarian options?</div>
     <div class="answer">A: Yes, we have a variety of delicious vegetarian dishes on our menu.</div>
+
+    <div class="question">Q: What type of cuisine does the restaurant offer?</div>
+    <div class="answer">A: Yes, we have a variety of delicious vegetarian dishes on our menu.</div>
+
+    <div class="question">Q: Is the restaurant suitable for vegetarians and vegans?</div>
+    <div class="answer">A: Currently we are working to optimize vegan options that will appear on our menu soon.</div>
+
+    <div class="question">Q: Does the restaurant accommodate dietary restrictions or allergies?</div>
+    <div class="answer">A: Absolutely. Please contact us about any dietary restrictions or allergies, and our kitchen staff will do their best to accommodate your needs.</div>
   </div>
+  
 
   <!-- Add more FAQ items as needed -->
 
 </main>
 
 </body>
+<hr>
+<footer>
+    <div>
+        <p><a href="#" style="text-decoration: none; color: black;">Terms</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;">Privacy</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;"> Security</a></p>
+        <p><a href="faqs.html" style="text-decoration: none; color: black;"> FAQs</a></p>
+        <p><a href="#" style="text-decoration: none; color: black;"> About Us</a></p>
+        <p>&#169;
+            <script>document.write(new Date().getFullYear());</script>, Exquisite Eateries, inc.
+        </p>
+    </div>
+</footer>
 </html>
